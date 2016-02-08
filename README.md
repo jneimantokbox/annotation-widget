@@ -46,15 +46,17 @@ The web page that loads the Annotations Widget for JavaScript must be served ove
 Using the widget
 -----
 
-The following steps will help you get started with the annotation widget:
+To use the annotation widget, add the toolbar to your container and create an annotation canvas for both the publisher and subscriber so they can use it. 
 
-- [Linking and Adding the Toolbar](#linking-and-adding-the-toolbar)
-- [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)
-- [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
-- [Cleaning Up](#cleaning-up)
+The following steps will help you get started:
+
+1. [Linking and Adding the Toolbar](#linking-and-adding-the-toolbar)
+2. [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)
+3. [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
+4. [Cleaning Up](#cleaning-up)
 
 ###Linking and Adding the Toolbar
-Link the active OpenTok session to the annotation toolbar and add the toolbar to a parent container.
+As you create the annotation toolbar instance, you will link the active OpenTok session to it and add the toolbar to the parent container.
 
 ```javascript
 toolbar = new OTSolution.Annotations.Toolbar({
@@ -64,7 +66,7 @@ toolbar = new OTSolution.Annotations.Toolbar({
 ```
 
 ### Attaching the Toolbar to a Publisher
-When the publisher is created, attach the annotation canvas and link it to the toolbar.
+When the publisher is created, attach the annotation canvas for the publisher and add it to the toolbar.
 
 ```javascript
 var canvas = new OTSolution.Annotations({
@@ -75,7 +77,7 @@ toolbar.addCanvas(canvas);
 ```
 
 ### Attaching the Toolbar to a Subscriber
-When new streams are created, you can attach the annotation canvases to each subscriber.
+When new streams are created, attach the annotation canvases for each subscriber and add those to the toolbar.
 
 ```javascript
 var subscriber = session.subscribe(stream, subscriberDiv.id);

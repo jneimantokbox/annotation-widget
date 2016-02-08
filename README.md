@@ -48,9 +48,12 @@ Using the widget
 
 The following steps will help you get started with the annotation widget:
 
-- [Linking and adding the toolbar](#linking-and-adding-the-toolbar)
+- [Linking and Adding the Toolbar](#linking-and-adding-the-toolbar)
+- [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)
+- [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
+- [Cleaning Up](#cleaning-up)
 
-###Linking and adding the toolbar
+###Linking and Adding the Toolbar
 Link the active OpenTok session to the annotation toolbar and add the toolbar to a parent container.
 
 ```javascript
@@ -60,7 +63,7 @@ toolbar = new OTSolution.Annotations.Toolbar({
 });
 ```
 
-### Attaching the toolbar to a publisher
+### Attaching the Toolbar to a Publisher
 When the publisher is created, attach the annotation canvas and link it to the toolbar.
 
 ```javascript
@@ -71,7 +74,7 @@ var canvas = new OTSolution.Annotations({
 toolbar.addCanvas(canvas);
 ```
 
-### Attaching the toolbar to a subscriber
+### Attaching the Toolbar to a Subscriber
 When new streams are created, you can attach the annotation canvases to each subscriber.
 
 ```javascript
@@ -86,7 +89,7 @@ var canvas = new OTSolution.Annotations({
 toolbar.addCanvas(canvas);
 ```
 
-### Cleaning up
+### Cleaning Up
 
 To remove a single annotation canvas, call the following:
 

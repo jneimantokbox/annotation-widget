@@ -47,7 +47,8 @@ Using the widget
 -----
 
 The following steps will help you get started with the annotation widget:
-[Linking and adding the toolbar](#linking-and-adding-the-toolbar)
+
+- [Linking and adding the toolbar](#linking-and-adding-the-toolbar)
 
 ###Linking and adding the toolbar
 Link the active OpenTok session to the annotation toolbar and add the toolbar to a parent container.

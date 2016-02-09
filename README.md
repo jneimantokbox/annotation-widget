@@ -134,7 +134,7 @@ toolbar.remove();
 Customizing the toolbar
 -----
 
-You can customize the annotation toolbar by specifying menu items and their associated actions, as well as your own color palette.
+You can customize the annotation toolbar by specifying menu items and their associated actions, as well as your own color palette:
 
 1. [Customizing Menu Items](#customizing-menu-items)
 2. [Adding a Custom Color Palette](#adding-a-custom-color-palette)

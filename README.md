@@ -75,7 +75,7 @@ toolbar = new OTSolution.Annotations.Toolbar({
 });
 ```
 
-For more information, see [Initialize, Connect, and Publish to a Session](https://tokbox.com/developer/concepts/connect-and-publish/)
+For more information, see [Initialize, Connect, and Publish to a Session](https://tokbox.com/developer/concepts/connect-and-publish/).
 
 ### Attaching the Toolbar to a Publisher
 To use the annotation toolbar, you will need a *canvas* on which the publisher can place annotations.
@@ -99,7 +99,7 @@ For more information, see [Publishing Streams](https://www.tokbox.com/developer/
 
 
 ### Attaching the Toolbar to a Subscriber
-When new streams are created, attach the annotation canvases for each subscriber and add those to the toolbar.
+As you create new streams, attach the annotation canvases for each subscriber and add those to the toolbar.
 
 ```javascript
 var subscriber = session.subscribe(stream, subscriberDiv.id);
@@ -117,17 +117,13 @@ For more information, see [Subscribing to streams](https://www.tokbox.com/develo
 
 ### Cleaning Up
 
-To remove a single annotation canvas, call the following:
+To remove a single annotation canvas, call the `Toolbar` object's `removeCanvas` method and provide the connection ID for the stream:
 
 ```javascript
-toolbar.removeCanvas(canvasId);
+toolbar.removeCanvas(publisher.stream.connection.connectionId);
 ```
 
-For example, `canvasId = publisher.stream.connection.connectionId`
-
-**Note**: `canvasId` is not the ID of the canvas element.
-
-To remove all annotation canvases and the annotation toolbar, call `remove`.
+To remove all annotation canvases and the annotation toolbar in a single invocation, call the `Toolbar` object's `remove` method.
 
 ```javascript
 toolbar.remove();

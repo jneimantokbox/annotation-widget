@@ -52,14 +52,12 @@ Using the widget
 
 To use the annotation widget, add the toolbar to your container and create an annotation canvas for both the publisher and subscriber so they can use it. 
 
-The following steps will help you get started:
+The following steps will help you get started, and you can refer to the [complete code example](https://github.com/opentok/annotation-widget/blob/js/web/index.html):
 
 1. [Linking and Adding the Toolbar](#linking-and-adding-the-toolbar)
 2. [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)
 3. [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
 4. [Cleaning Up](#cleaning-up)
-
-View the complete code example here: [Quickstart](https://github.com/opentok/annotation-widget/blob/js/web/index.html).
 
 Once you have completed these steps, proceed to [Customizing the Toolbar](#customizing-the-toolbar).
 
@@ -76,6 +74,8 @@ toolbar = new OTSolution.Annotations.Toolbar({
     container: document.getElementById('toolbar')
 });
 ```
+
+For more information, see [Initialize, Connect, and Publish to a Session](https://tokbox.com/developer/concepts/connect-and-publish/)
 
 ### Attaching the Toolbar to a Publisher
 To use the annotation toolbar, you will need a *canvas* on which the publisher can place annotations.
@@ -95,6 +95,9 @@ var canvas = new OTSolution.Annotations({
 toolbar.addCanvas(canvas);
 ```
 
+For more information, see [Publishing Streams](https://www.tokbox.com/developer/guides/publish-stream/js/).
+
+
 ### Attaching the Toolbar to a Subscriber
 When new streams are created, attach the annotation canvases for each subscriber and add those to the toolbar.
 
@@ -109,6 +112,8 @@ var canvas = new OTSolution.Annotations({
 });
 toolbar.addCanvas(canvas);
 ```
+
+For more information, see [Subscribing to streams](https://www.tokbox.com/developer/guides/subscribe-stream/js/).
 
 ### Cleaning Up
 

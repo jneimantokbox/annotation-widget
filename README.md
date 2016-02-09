@@ -7,7 +7,7 @@ While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must
 
 * **[Image files](https://github.com/opentok/annotation-widget/tree/js/web/image)**: used for the toolbar icons. 
 
-* **[index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html)**: this web page provides you with a quick start if you don't already have a web page that's making calls against OpenTok.js. You can also look at this file to see how to implement the toolbar in your own page.
+* **[index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html)**: this web page provides you with a quick start if you don't already have a web page that's making calls against OpenTok.js. You can also look at this file to see how to implement the toolbar in your own page. The steps to create this web page are described below in [Using the Widget](#using-the-widget).
 
 As a beta, this code is subject to change. You can email feedback to collaboration-tools-beta-program@tokbox.com.
 
@@ -54,8 +54,9 @@ The following steps will help you get started:
 2. [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)
 3. [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
 4. [Cleaning Up](#cleaning-up)
+5. View the complete code example here: [index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html).
 
-Once you have completed these steps, proceed to [Customizing the Toolbar](#customizing-the-toolbar)
+Once you have completed these steps, proceed to [Customizing the Toolbar](#customizing-the-toolbar).
 
 ###Linking and Adding the Toolbar
 As you create the annotation toolbar instance, you will link the active OpenTok session to it and add the toolbar to the parent container.

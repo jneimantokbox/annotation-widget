@@ -136,12 +136,10 @@ Customizing the toolbar
 
 You can customize the annotation toolbar by specifying menu items and their associated actions, as well as your own color palette.
 
-1. [Linking and Adding the Toolbar](#linking-and-adding-the-toolbar)
-2. [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)
-3. [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
-4. [Cleaning Up](#cleaning-up)
+1. [Customizing Menu Items](#customizing-menu-items)
+2. [Adding a Custom Color Palette](#adding-a-custom-color-palette)
 
-are availab help you get started, and you can refer to the [complete code example](https://github.com/opentok/annotation-widget/blob/js/web/index.html):
+See the [quickstart](https://github.com/opentok/annotation-widget/blob/js/web/index.html) for a complete code example.
 
 ### Customizing Menu Items
 
@@ -264,7 +262,7 @@ toolbar.itemClicked(function (id) {
 ```
 
 
-### Adding a custom color palette
+### Adding a Custom Color Palette
 
 A set of custom color choices can be added when the toolbar is initialized:
 

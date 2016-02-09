@@ -55,6 +55,8 @@ The following steps will help you get started:
 3. [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
 4. [Cleaning Up](#cleaning-up)
 
+Once you have completed these steps, proceed to [Customizing the Toolbar](#customizing-the-toolbar)
+
 ###Linking and Adding the Toolbar
 As you create the annotation toolbar instance, you will link the active OpenTok session to it and add the toolbar to the parent container.
 

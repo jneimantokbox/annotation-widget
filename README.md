@@ -145,7 +145,8 @@ are availab help you get started, and you can refer to the [complete code exampl
 
 ### Customizing Menu Items
 
-You can make use of the [default menu items](#default-menu-items) available in the toolbar, or you add customize menu items and their associated click events:
+You can make use of the [default menu items](#default-menu-items) available in the toolbar, or you can add customized menu items and their associated click events:
+
 1. [Adding Menu Items](#adding-menu-items)
 2. [Handling Menu Item Click Events](#handling-menu-item-click-events)
 

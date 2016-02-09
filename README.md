@@ -74,9 +74,11 @@ toolbar = new OTSolution.Annotations.Toolbar({
 ```
 
 ### Attaching the Toolbar to a Publisher
-When the publisher is created, attach the annotation canvas for the publisher and add it to the toolbar:
+To use the annotation toolbar, you will need a *canvas* on which the publisher can place annotations.
 
-- Instantiate an `Annotations` object (the annotation canvas):
+After you create the publisher, create an annotation canvas for the publisher and add it to the toolbar:
+
+- Create an annotation canvas by instantiating an `Annotations` object:
   - Assign the publisher variable to the `Annotations` object's `feed` property.
   - Assign the publisher div to the `Annotations` object's `container` property.
 - Add the annotation canvas to the annotation toolbar by calling the `Toolbar` object's `addCanvas` method.

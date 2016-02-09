@@ -54,7 +54,8 @@ The following steps will help you get started:
 2. [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)
 3. [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
 4. [Cleaning Up](#cleaning-up)
-5. View the complete code example here: [index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html).
+
+View the complete code example here: [Quickstart](https://github.com/opentok/annotation-widget/blob/js/web/index.html).
 
 Once you have completed these steps, proceed to [Customizing the Toolbar](#customizing-the-toolbar).
 

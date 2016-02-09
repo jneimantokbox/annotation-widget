@@ -62,8 +62,8 @@ Once you have completed these steps, proceed to [Customizing the Toolbar](#custo
 ###Linking and Adding the Toolbar
 As you create the annotation toolbar instance, link the active OpenTok session to it and add the toolbar to the parent container: 
 
-- Assign the OpenTok session variable to the `Toolbar` object's `session` property.
-- Assign the element ID for the toolbar to the `Toolbar` object's `container` property.
+1. Assign the OpenTok session variable to the `Toolbar` object's `session` property.
+2. Assign the element ID for the toolbar to the `Toolbar` object's `container` property.
 
 
 ```javascript
@@ -76,12 +76,12 @@ toolbar = new OTSolution.Annotations.Toolbar({
 ### Attaching the Toolbar to a Publisher
 To use the annotation toolbar, you will need a *canvas* on which the publisher can place annotations.
 
-After you create the publisher, create an annotation canvas for the publisher and add it to the toolbar:
+Once you create the publisher instance, create an annotation canvas for the publisher and add it to the toolbar:
 
-- Create an annotation canvas by instantiating an `Annotations` object:
+1. Create an annotation canvas by instantiating an `Annotations` object:
   - Assign the publisher variable to the `Annotations` object's `feed` property.
   - Assign the publisher div to the `Annotations` object's `container` property.
-- Add the annotation canvas to the annotation toolbar by calling the `Toolbar` object's `addCanvas` method.
+2. Add the annotation canvas to the annotation toolbar by calling the `Toolbar` object's `addCanvas` method.
 
 ```javascript
 var canvas = new OTSolution.Annotations({

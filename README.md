@@ -134,9 +134,24 @@ toolbar.remove();
 Customizing the toolbar
 -----
 
-### Default menu items
+You can customize the annotation toolbar by specifying menu items and their associated actions, as well as your own color palette.
 
-Below is a list of default menu items that can be used in your custom menu. These come pre-built with the action specified.
+1. [Linking and Adding the Toolbar](#linking-and-adding-the-toolbar)
+2. [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)
+3. [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
+4. [Cleaning Up](#cleaning-up)
+
+are availab help you get started, and you can refer to the [complete code example](https://github.com/opentok/annotation-widget/blob/js/web/index.html):
+
+### Customizing Menu Items
+
+You can make use of the [default menu items](#default-menu-items) available in the toolbar, or you add customize menu items and their associated click events:
+1. [Adding Menu Items](#adding-menu-items)
+2. [Handling Menu Item Click Events](#handling-menu-item-click-events)
+
+#### Default Menu Items
+
+Below is a list of default menu items that can be used in your custom toolbar menu. These come pre-built with the action already specified.
 If no custom items are added to the toolbar initializer, these will be automatically added to your toolbar.
 
 | id            | Action        |
@@ -153,7 +168,9 @@ If no custom items are added to the toolbar initializer, these will be automatic
 | `OT_capture` | Tap a video frame to capture a screenshot |
 
 
-### Adding menu items
+#### Adding menu items
+
+To add menu items and subitems, assign them to the `Toolbar` object's `items` property:
 
 ```javascript
 toolbar = new OTSolution.Annotations.Toolbar({
@@ -236,6 +253,15 @@ toolbar = new OTSolution.Annotations.Toolbar({
 });
 ```
 
+#### Handling Menu Item Click Events
+
+
+```javascript
+toolbar.itemClicked(function (id) {
+// Handle the event
+});
+```
+
 
 ### Adding a custom color palette
 
@@ -252,15 +278,6 @@ toolbar = new OTSolution.Annotations.Toolbar({
         "#34495e",
         "#16a085"
     ]
-});
-```
-
-### Handling menu click events
-
-
-```javascript
-toolbar.itemClicked(function (id) {
-    // Handle the event
 });
 ```
 

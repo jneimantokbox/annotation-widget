@@ -62,8 +62,8 @@ Once you have completed these steps, proceed to [Customizing the Toolbar](#custo
 ###Linking and Adding the Toolbar
 As you create the annotation toolbar instance, link the active OpenTok session to it and add the toolbar to the parent container: 
 
-- Assign the OpenTok session variable to its `session` property
-- Assign the element ID for the toolbar `container` property
+- Assign the OpenTok session variable to the `Toolbar` object's `session` property
+- Assign the element ID for the toolbar to the `Toolbar` object's `container` property
 
 
 ```javascript

@@ -3,11 +3,11 @@ OpenTok Annotations Widget for JavaScript -- Beta
 
 While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must host the JavaScript Annotations widget yourself. This allows you to modify the widget as desired. 
 
-* **[opentok-annotations.js](https://github.com/opentok/annotation-widget/tree/js/web/script)**: includes the CSS. If you already have a website that's making calls against the OpenTok JavaScript client, you can just grab this file and the image files.
+* **[opentok-annotations.js](https://github.com/opentok/annotation-widget/tree/js/web/script)**: includes the CSS. If you already have a website making calls against the OpenTok JavaScript client, you can simply download this file and the image files.
 
 * **[Image files](https://github.com/opentok/annotation-widget/tree/js/web/image)**: used for the toolbar icons. 
 
-* **[index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html)**: this web page provides you with a quick start if you don't already have a web page that's making calls against OpenTok.js. You can also look at this file to see how to implement the toolbar in your own page. The steps to create this web page are described below in [Using the Widget](#using-the-widget).
+* **[index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html)**: this quickstart provides you with a fully functioning web page so you can immediately begin making calls against OpenTok.js. You can refer to this example to see how to implement the toolbar on your own page. The steps to create this web page are described below in [Using the Widget](#using-the-widget).
 
 As a beta, this code is subject to change. You can email feedback to collaboration-tools-beta-program@tokbox.com.
 
@@ -60,7 +60,11 @@ View the complete code example here: [Quickstart](https://github.com/opentok/ann
 Once you have completed these steps, proceed to [Customizing the Toolbar](#customizing-the-toolbar).
 
 ###Linking and Adding the Toolbar
-As you create the annotation toolbar instance, you will link the active OpenTok session to it and add the toolbar to the parent container.
+As you create the annotation toolbar instance, link the active OpenTok session to it and add the toolbar to the parent container: 
+
+- Assign the OpenTok session variable to its `session` property
+- Assign the element ID for the toolbar `container` property
+
 
 ```javascript
 toolbar = new OTSolution.Annotations.Toolbar({

@@ -254,7 +254,7 @@ toolbar = new OTSolution.Annotations.Toolbar({
 
 #### Handling Menu Item Click Events
 
-To associate a click event handler with a menu item, call the `Toolbar` object's `itemClicked` method and provide the menu item ID:
+To associate a click event handler with a menu item, call the `Toolbar` object's `itemClicked` method and pass in the menu item ID:
 
 
 ```javascript
@@ -289,7 +289,18 @@ Annotations with screen sharing
 For information on setting up your own screen sharing extension, see our sample on [Github](https://github.com/opentok/screensharing-extensions). Once you have
 screen sharing set up, follow one of the recommended steps to install the extension on [Firefox](https://github.com/opentok/screensharing-extensions/tree/master/firefox/ScreenSharing#installing-your-extension) or [Chrome](https://github.com/opentok/screensharing-extensions/tree/master/chrome/ScreenSharing#packaging-and-deploying-your-extension-for-use-at-your-website).
 
-Annotations are set up for screen sharing in a similar way as with a video publisher:
+Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, the canvas is attached to the video publisher's toolbar. The following code is included in the larger example below:
+
+```javascript
+var canvas = new OTSolution.Annotations({
+    feed: screenSharingPublisher,
+    container: screenContainerElement
+});
+toolbar.addCanvas(canvas);
+```
+
+This example includes the annotation toolbar for the video publisher:
+
 
 ```javascript
 var parentDiv = document.getElementById('screenshareContainer');

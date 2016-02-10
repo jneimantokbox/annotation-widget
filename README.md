@@ -299,7 +299,7 @@ var canvas = new OTSolution.Annotations({
 toolbar.addCanvas(canvas);
 ```
 
-This example includes the annotation toolbar for the video publisher:
+This example attaches the annotation toolbar canvas to the video publisher:
 
 
 ```javascript
@@ -345,9 +345,9 @@ var parentDiv = document.getElementById('screenshareContainer');
                 });
 ```
 
-For best results, we recommend that a new window is opened for annotations with screen sharing. This allows annotations to be added to extents
+For best results, we recommend you open a new window for annotations with screen sharing. This allows annotations to be added to extents
 beyond the browser window (on your desktop, for example). The code snippet below is used to create a new window that points to the URL of the
-screen sharing with annotations sample ([screenshare.html](web/screenshare.html)) and height and width values for the new window.
+screen sharing sample with annotations ([screenshare.html](web/screenshare.html)), and specifies height and width values for the new window.
 
 ```javascript
 function popupCenter(url, w, h) {
@@ -360,8 +360,7 @@ function popupCenter(url, w, h) {
 }
 ```
 
-See the [OpenTok.js screen sharing documentation](https://tokbox.com/developer/guides/screen-sharing/js) for full details on working
-with screen sharing.
+See the [OpenTok.js screen sharing documentation](https://tokbox.com/developer/guides/screen-sharing/js) for more information about screen sharing.
 
 
 Cross-platform compatibility notes

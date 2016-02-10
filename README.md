@@ -169,7 +169,7 @@ If no custom items are added to the toolbar initializer, these will be automatic
 
 #### Adding menu items
 
-To add menu items and subitems, assign them to the `Toolbar` object's `items` property:
+To add menu items and submenu items, assign them to the `Toolbar` object's `items` property. To create submenu items, add an `items` property to an `item` and continue recursively:
 
 ```javascript
 toolbar = new OTSolution.Annotations.Toolbar({
@@ -254,6 +254,8 @@ toolbar = new OTSolution.Annotations.Toolbar({
 
 #### Handling Menu Item Click Events
 
+To associate a click event handler with a menu item, call the `Toolbar` object's `itemClicked` method and provide the menu item ID:
+
 
 ```javascript
 toolbar.itemClicked(function (id) {
@@ -264,7 +266,7 @@ toolbar.itemClicked(function (id) {
 
 ### Adding a Custom Color Palette
 
-A set of custom color choices can be added when the toolbar is initialized:
+To add a set of custom color choices to your annotation toolbar, initialize the `Toolbar` object's `colors` property with an array of color values:
 
 ```javascript
 toolbar = new OTSolution.Annotations.Toolbar({

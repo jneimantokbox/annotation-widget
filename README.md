@@ -7,7 +7,7 @@ While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must
 
 * **[Image files](https://github.com/opentok/annotation-widget/tree/js/web/image)**: used for the toolbar icons. 
 
-* **[index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html)**: this quickstart provides you with a fully functioning web page so you can immediately begin making calls against OpenTok.js. You can refer to this example to see how to implement the toolbar on your own page. The steps to create this web page are described below in [Using the Widget](#using-the-widget).
+* **[index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html)**: this quick start provides you with a fully functioning web page so you can immediately begin making calls against OpenTok.js. You can refer to this example to see how to implement the toolbar on your own page. The steps to create this web page are described below in [Using the Widget](#using-the-widget).
 
 As a beta, this code is subject to change. You can email feedback to collaboration-tools-beta-program@tokbox.com.
 
@@ -139,7 +139,7 @@ You can customize the annotation toolbar by specifying menu items and their asso
 1. [Customizing Menu Items](#customizing-menu-items)
 2. [Adding a Custom Color Palette](#adding-a-custom-color-palette)
 
-See the [quickstart](https://github.com/opentok/annotation-widget/blob/js/web/index.html) for a complete code example.
+See the [quick start](https://github.com/opentok/annotation-widget/blob/js/web/index.html) for a complete code example.
 
 ### Customizing Menu Items
 
@@ -254,7 +254,7 @@ toolbar = new OTSolution.Annotations.Toolbar({
 
 #### Handling Menu Item Click Events
 
-To associate a click event handler with a menu item, call the `Toolbar` object's `itemClicked` method and pass in the menu item ID:
+To associate a click event handler with a menu item, define an `itemClicked` method for the `Toolbar` object. Specify the menu item ID as the method parameter:
 
 
 ```javascript

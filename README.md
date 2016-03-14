@@ -305,6 +305,17 @@ function popupCenter(url, w, h) {
 }
 ```
 
+To handle the various screensharing capabilities and support in the browser, the startScreenshare() function in [index.html](web/index.html) is assigned to the screensharing button’ onClick handler. It contains logic to check the screen sharing support and available extensions, and publishes the screensharing window. The following portion of its code publishes the screensharing window:
+
+```javascript
+createToolbar(win);
+win.toolbar.createPanel(win);
+var elements = win.createContainerElements();
+startPublishing('screen', elements);
+show('stopScreenshareLink');
+
+```
+
 
 The screensharing container and the toolbar that will be attached to its canvas are set up in [screenshare.html](web/screenshare.html), as shown in these portions of its code:
 
@@ -342,64 +353,6 @@ var windowRef = type === 'camera' ? window : screenshareWindow;
 
 var toolbarRef = windowRef.toolbar;
 toolbarRef.addCanvas(canvas);
-```
-
-
-
-The following code is included in the larger example below:
-
-```javascript
-var canvas = new OTSolution.Annotations({
-    feed: screenSharingPublisher,
-    container: screenContainerElement
-});
-toolbar.addCanvas(canvas);
-```
-
-This example attaches the annotation toolbar canvas to the video publisher:
-
-
-```javascript
-var parentDiv = document.getElementById('screenshareContainer');
-        var screenContainerElement = document.createElement('div');
-        screenContainerElement.setAttribute('id', 'screenshare_publisher');
-        parentDiv.appendChild(screenContainerElement);
-
-        var screenSharingPublisher = OT.initPublisher(
-                screenContainerElement.id,
-                {
-                    videoSource: 'screen', // Specify the source as screen share
-                    width: window.innerWidth,
-                    height: window.innerHeight
-                },
-                function (error) {
-                    if (error) {
-                        alert('Something went wrong: ' + error.message);
-                    } else {
-                        // Add the toolbar
-                        var toolbarDiv = toolbar.parent; // Re-use existing toolbar (or you can add a new one here)
-                        toolbarDiv.style.position = 'absolute';
-                        toolbarDiv.style.top = '0px';
-
-                        document.body.appendChild(toolbarDiv);
-
-                        console.log(session);
-
-                        session.publish(
-                                screenSharingPublisher,
-                                function (error) {
-                                    if (error) {
-                                        alert('Something went wrong: ' + error.message);
-                                    }
-                                });
-
-                        var canvas = new OTSolution.Annotations({
-                            feed: screenSharingPublisher,
-                            container: screenContainerElement
-                        });
-                        toolbar.addCanvas(canvas);
-                    }
-                });
 ```
 
 

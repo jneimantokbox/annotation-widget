@@ -305,7 +305,7 @@ function popupCenter(url, w, h) {
 }
 ```
 
-To handle the various screensharing capabilities and support in the browser, the startScreenshare() function in [index.html](web/index.html) is assigned to the screensharing button’ onClick handler. It contains logic to check the screen sharing support and available extensions, and publishes the screensharing window. The following portion of its code publishes the screensharing window:
+To handle the various screen sharing capabilities and support in the browser, the startScreenshare() function in [index.html](web/index.html) is assigned to the screen sharing button’s `onClick` event handler. It contains logic to check the screen sharing support and available extensions, and publishes the screen sharing window. The following portion of its code publishes the screen sharing window:
 
 ```javascript
 createToolbar(win);
@@ -317,7 +317,7 @@ show('stopScreenshareLink');
 ```
 
 
-The screensharing container and the toolbar that will be attached to its canvas are set up in [screenshare.html](web/screenshare.html), as shown in these portions of its code:
+The screen sharing container and the toolbar that will be attached to its canvas are set up in [screenshare.html](web/screenshare.html), as shown in these portions of its code:
 
 ```javascript
 <script type="text/javascript" charset="utf-8">
@@ -344,7 +344,7 @@ The screensharing container and the toolbar that will be attached to its canvas 
 ```
 
 
-Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](web/index.html), the canvas is attached to the screensharing window’s toolbar. In this portion of the logic, `windowRef` is the screensharing window, whose toolbar is attached to its canvas using the toolbar’s `addCanvas()` method:
+Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](web/index.html), the canvas is attached to the screen sharing window’s toolbar. In this portion of the logic, `windowRef` is the screen sharing window, whose toolbar is attached to its canvas using the toolbar’s `addCanvas()` method:
 
 ```javascript
 var windowRef = type === 'camera' ? window : screenshareWindow;

@@ -281,6 +281,15 @@ toolbar = new OTSolution.Annotations.Toolbar({
 For information on setting up your own screen sharing extension, see our sample on [Github](https://github.com/opentok/screensharing-extensions). Once you have
 screen sharing set up, follow one of the recommended steps to install the extension on [Firefox](https://github.com/opentok/screensharing-extensions/tree/master/firefox/ScreenSharing#installing-your-extension) or [Chrome](https://github.com/opentok/screensharing-extensions/tree/master/chrome/ScreenSharing#packaging-and-deploying-your-extension-for-use-at-your-website).
 
+The following steps are recommended for setting up screen sharing:
+
+1. [Open a separate screen sharing window](#open-a-separate-screen-sharing-window)
+2. [Set up the screen sharing container](#set-up-the-screen-sharing-container)
+3. [Attach the toolbar to the canvas](#attach-the-toolbar-to-the-canvas)
+
+
+### Open a separate screen sharing window
+
 For best results, we recommend you open a new window for annotations with screen sharing. This allows annotations to be added to extents
 beyond the browser window (on your desktop, for example). The code snippet below is used to create a new window that points to the URL of the
 screen sharing sample with annotations ([screenshare.html](web/screenshare.html)), and specifies height and width values for the new window.
@@ -308,6 +317,7 @@ show('stopScreenshareLink');
 
 ```
 
+### Set up the screen sharing container
 
 The screen sharing container and the toolbar that will be attached to its canvas are set up in [screenshare.html](web/screenshare.html), as shown in these portions of its code:
 
@@ -335,6 +345,7 @@ The screen sharing container and the toolbar that will be attached to its canvas
 </body>
 ```
 
+### Attach the toolbar to the canvas
 
 Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](web/index.html), the canvas is attached to the screen sharing window’s toolbar. In this portion of the logic, `windowRef` is the screen sharing window, whose toolbar is attached to its canvas using the toolbar’s `addCanvas()` method:
 

@@ -297,6 +297,7 @@ The following steps are recommended for setting up screen sharing:
 1. [Open a separate screen sharing window](#open-a-separate-screen-sharing-window)
 2. [Set up the screen sharing container](#set-up-the-screen-sharing-container)
 3. [Attach the toolbar to the canvas](#attach-the-toolbar-to-the-canvas)
+4. [Publish the screen sharing window](#publish-the-screen-sharing-window)
 
 
 ### Open a separate screen sharing window
@@ -358,7 +359,7 @@ The screen sharing container and the toolbar that will be attached to its canvas
 
 ### Attach the toolbar to the canvas
 
-Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](web/index.html), the canvas is attached to the screen sharing window’s toolbar. In this portion of the logic, `windowRef` is the screen sharing window, whose toolbar is attached to its canvas using the toolbar’s `addCanvas()` method:
+Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](web/index.html), the toolbar is attached to the screen sharing window’s canvas. In this portion of the logic, `windowRef` is the screen sharing window, whose toolbar is attached to its canvas using the toolbar’s `addCanvas()` method:
 
 ```javascript
 var windowRef = type === 'camera' ? window : screenshareWindow;
@@ -367,6 +368,31 @@ var windowRef = type === 'camera' ? window : screenshareWindow;
 
 var toolbarRef = windowRef.toolbar;
 toolbarRef.addCanvas(canvas);
+```
+
+### Publish the screen sharing window
+
+Now that you have set up the screen sharing window and its toolbar, you can create the canvas add it to the window, and link the toolbar with the canvas, as shown in this portion of the `startPublishing()` function in [index.html](web/index.html):
+
+```javascript
+var windowRef = type === 'camera' ? window : screenshareWindow;
+var context = windowRef.document;
+var parentDiv;
+var publisherDiv;
+
+. . .
+
+publisherDiv = elements.publisher;
+
+. . .
+
+ var canvas = new OTSolution.Annotations({
+   feed: publisher,
+   container: type === 'camera' ? publisherDiv : elements.annotation
+});
+                
+var toolbarRef = windowRef.toolbar;
+toolbarRef.addCanvas(canvas);  
 ```
 
 

@@ -333,7 +333,7 @@ The screensharing container and the toolbar that will be attached to its canvas 
 ```
 
 
-Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html), the canvas is attached to the screensharing window’s toolbar. In this portion of the logic, `windowRef` is the screensharing window, whose toolbar is attached to its canvas using the toolbar’s `addCanvas()` method:
+Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](web/index.html), the canvas is attached to the screensharing window’s toolbar. In this portion of the logic, `windowRef` is the screensharing window, whose toolbar is attached to its canvas using the toolbar’s `addCanvas()` method:
 
 ```javascript
 var windowRef = type === 'camera' ? window : screenshareWindow;

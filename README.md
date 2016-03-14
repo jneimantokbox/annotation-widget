@@ -297,9 +297,7 @@ screen sharing sample with annotations ([screenshare.html](web/screenshare.html)
 function popupCenter(url, w, h) {
     var left = (screen.width/2)-(w/2);
     var top = (screen.height/2)-(h/2);
-    var win = window.open(url, '', 'toolbar=no, location=no, directories=no, 
-         status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, 
-          width='+w+', height='+h+', top='+top+', left='+left);
+    var win = window.open(url, '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
 
     // Share the toolbar with the window to be reused. 
     // Otherwise you can create a new one in 'screenshare.html'

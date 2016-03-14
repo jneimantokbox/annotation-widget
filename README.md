@@ -1,4 +1,4 @@
-# OpenTok Annotations Widget for JavaScript -- Beta
+# OpenTok Annotations Widget for JavaScript
 
 While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must host the JavaScript Annotations widget yourself. This allows you to modify the widget as desired. 
 
@@ -9,6 +9,17 @@ While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must
 * **[index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html)**: this quick start provides you with a fully functioning web page so you can immediately begin making calls against OpenTok.js. You can refer to this example to see how to implement the toolbar on your own page. The steps to create this web page are described below in [Using the Widget](#using-the-widget).
 
 As a beta, this code is subject to change. You can email feedback to collaboration-tools-beta-program@tokbox.com.
+
+This guide has the following sections
+
+- [Requirements](#requirements)
+- [Prerequisites](#prerequisites)
+- [Downloading the widget](#downloading-the-widget)
+- [Deploying the widget](#deploying-the-widget)
+- [Using the widget](#using-the-widget)
+- [Customizing the toolbar](#customizing-the-toolbar)
+- [Annotations with screen sharing](#annotations-with-screen-sharing)
+- [Cross-platform compatibility notes](#cross-platform-compatibility-notes)
 
 ## Requirements
 
@@ -55,7 +66,7 @@ The following steps will help you get started, and you can refer to the [complet
 
 Once you have completed these steps, proceed to [Customizing the Toolbar](#customizing-the-toolbar).
 
-###Linking and Adding the Toolbar
+### Linking and Adding the Toolbar
 As you create the annotation toolbar instance, link the active OpenTok session to it and add the toolbar to the parent container: 
 
 1. Assign the OpenTok session variable to the `Toolbar` object's `session` property.
@@ -362,8 +373,7 @@ toolbarRef.addCanvas(canvas);
 See the [OpenTok.js screen sharing documentation](https://tokbox.com/developer/guides/screen-sharing/js) for more information about screen sharing.
 
 
-Cross-platform compatibility notes
-----------------
+## Cross-platform compatibility notes
 
 To ensure that all annotations aren't cut off across devices, we recommend:
 

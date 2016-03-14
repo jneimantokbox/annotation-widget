@@ -372,7 +372,7 @@ toolbarRef.addCanvas(canvas);
 
 ### Publish the screen sharing window
 
-Now that you have set up the screen sharing window and its toolbar, you can create the canvas add it to the window, and link the toolbar with the canvas, as shown in this portion of the `startPublishing()` function in [index.html](web/index.html):
+Now that you have set up the screen sharing window and its toolbar, you can create the canvas, add it to the window, and link the toolbar with the canvas, as shown in this portion of the `startPublishing()` function in [index.html](web/index.html):
 
 ```javascript
 var windowRef = type === 'camera' ? window : screenshareWindow;

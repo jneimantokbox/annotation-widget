@@ -289,7 +289,47 @@ Annotations with screen sharing
 For information on setting up your own screen sharing extension, see our sample on [Github](https://github.com/opentok/screensharing-extensions). Once you have
 screen sharing set up, follow one of the recommended steps to install the extension on [Firefox](https://github.com/opentok/screensharing-extensions/tree/master/firefox/ScreenSharing#installing-your-extension) or [Chrome](https://github.com/opentok/screensharing-extensions/tree/master/chrome/ScreenSharing#packaging-and-deploying-your-extension-for-use-at-your-website).
 
-Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, the canvas is attached to the video publisher's toolbar. The following code is included in the larger example below:
+The screensharing container and the toolbar that will be attached to its canvas are set up in [screenshare.html](https://github.com/opentok/annotation-widget/blob/js/web/screenshare.html), as shown in these portions of its code:
+
+```javascript
+<script type="text/javascript" charset="utf-8">
+  var toolbar;
+
+  function createContainerElements() {
+    var parentDiv = document.getElementById('screenshareContainer');
+    var publisherContainer = document.createElement('div');
+    publisherContainer.setAttribute('id', 'screenshare_publisher');
+    publisherContainer.classList.add('publisher-wrap');
+    parentDiv.appendChild(publisherContainer);
+    return {
+       annotation: parentDiv,
+       publisher: publisherContainer
+    };
+  }
+
+</script>
+
+<body>
+    <div id="screenshareContainer" style="width:800px;height:600px"></div>
+    <div id="toolbar"></div>
+</body>
+```
+
+
+Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html), the canvas is attached to the video publisher's toolbar. In this portion of the logic, `windowRef` is the screensharing window, whose toolbar is attached to its canvas using the toolbar’s `addCanvas()` method:
+
+```javascript
+var windowRef = type === 'camera' ? window : screenshareWindow;
+
+…
+
+var toolbarRef = windowRef.toolbar;
+toolbarRef.addCanvas(canvas);
+```
+
+
+
+The following code is included in the larger example below:
 
 ```javascript
 var canvas = new OTSolution.Annotations({

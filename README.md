@@ -306,7 +306,7 @@ function popupCenter(url, w, h) {
 }
 ```
 
-To handle the various screen sharing capabilities and support in the browser, the startScreenshare() function in [index.html](web/index.html) is assigned to the screen sharing button’s `onClick` event handler. It contains logic to check the screen sharing support and available extensions, and publishes the screen sharing window. The following portion of its code publishes the screen sharing window:
+To handle the various screen sharing capabilities and support in the browser, the `startScreenshare()` function in [index.html](web/index.html) is assigned to the screen sharing button’s `onClick` event handler. It contains logic to check the screen sharing support and available extensions, and publishes the screen sharing window. The following portion of its code publishes the screen sharing window:
 
 ```javascript
 createToolbar(win);

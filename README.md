@@ -289,6 +289,25 @@ Annotations with screen sharing
 For information on setting up your own screen sharing extension, see our sample on [Github](https://github.com/opentok/screensharing-extensions). Once you have
 screen sharing set up, follow one of the recommended steps to install the extension on [Firefox](https://github.com/opentok/screensharing-extensions/tree/master/firefox/ScreenSharing#installing-your-extension) or [Chrome](https://github.com/opentok/screensharing-extensions/tree/master/chrome/ScreenSharing#packaging-and-deploying-your-extension-for-use-at-your-website).
 
+For best results, we recommend you open a new window for annotations with screen sharing. This allows annotations to be added to extents
+beyond the browser window (on your desktop, for example). The code snippet below is used to create a new window that points to the URL of the
+screen sharing sample with annotations ([screenshare.html](web/screenshare.html)), and specifies height and width values for the new window.
+
+```javascript
+function popupCenter(url, w, h) {
+    var left = (screen.width/2)-(w/2);
+    var top = (screen.height/2)-(h/2);
+    var win = window.open(url, '', 'toolbar=no, location=no, directories=no, 
+         status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, 
+          width='+w+', height='+h+', top='+top+', left='+left);
+
+    // Share the toolbar with the window to be reused. 
+    // Otherwise you can create a new one in 'screenshare.html'
+    win.toolbar = toolbar;
+}
+```
+
+
 The screensharing container and the toolbar that will be attached to its canvas are set up in [screenshare.html](https://github.com/opentok/annotation-widget/blob/js/web/screenshare.html), as shown in these portions of its code:
 
 ```javascript
@@ -321,7 +340,7 @@ Annotations are set up for screen sharing in a similar way as with a video publi
 ```javascript
 var windowRef = type === 'camera' ? window : screenshareWindow;
 
-  . . .
+. . .
 
 var toolbarRef = windowRef.toolbar;
 toolbarRef.addCanvas(canvas);
@@ -385,20 +404,6 @@ var parentDiv = document.getElementById('screenshareContainer');
                 });
 ```
 
-For best results, we recommend you open a new window for annotations with screen sharing. This allows annotations to be added to extents
-beyond the browser window (on your desktop, for example). The code snippet below is used to create a new window that points to the URL of the
-screen sharing sample with annotations ([screenshare.html](web/screenshare.html)), and specifies height and width values for the new window.
-
-```javascript
-function popupCenter(url, w, h) {
-    var left = (screen.width/2)-(w/2);
-    var top = (screen.height/2)-(h/2);
-    var win = window.open(url, '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
-
-    // Share the toolbar with the window to be re-used, otherwise you can create a new one in 'screenshare.html'
-    win.toolbar = toolbar;
-}
-```
 
 See the [OpenTok.js screen sharing documentation](https://tokbox.com/developer/guides/screen-sharing/js) for more information about screen sharing.
 

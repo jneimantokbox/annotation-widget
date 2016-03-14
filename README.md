@@ -306,7 +306,7 @@ function popupCenter(url, w, h) {
 ```
 
 
-The screensharing container and the toolbar that will be attached to its canvas are set up in [screenshare.html](https://github.com/opentok/annotation-widget/blob/js/web/screenshare.html), as shown in these portions of its code:
+The screensharing container and the toolbar that will be attached to its canvas are set up in [screenshare.html](web/screenshare.html), as shown in these portions of its code:
 
 ```javascript
 <script type="text/javascript" charset="utf-8">

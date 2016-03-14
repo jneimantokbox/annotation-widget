@@ -1,5 +1,4 @@
-OpenTok Annotations Widget for JavaScript -- Beta
-==================
+# OpenTok Annotations Widget for JavaScript -- Beta
 
 While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must host the JavaScript Annotations widget yourself. This allows you to modify the widget as desired. 
 
@@ -11,14 +10,12 @@ While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must
 
 As a beta, this code is subject to change. You can email feedback to collaboration-tools-beta-program@tokbox.com.
 
-Requirements
------
+## Requirements
 
 Review the basic requirements for [OpenTok](https://tokbox.com/developer/requirements/) and [OpenTok.js](https://tokbox.com/developer/sdks/js/#browsers).
 
 
-Prerequisites
------
+## Prerequisites
 
 * **OpenTok JavaScript client SDK**: your web page must load [OpenTok.js](https://tokbox.com/developer/sdks/js/) first, then [opentok-annotations.js](https://github.com/opentok/annotation-widg
 et/tree/js/web/script).  
@@ -28,16 +25,14 @@ et/tree/js/web/script).
 * **Session ID and token**: during testing and development phases, you can generate these manually inside the [Dashboard](https://dashboard.tokbox.com/). Before going live, you will need to deploy a [server SDK](https://tokbox.com/developer/sdks/server/) and generate these values dynamically.
 
 
-Downloading the widget
------
+## Downloading the widget
 
 [Download](https://github.com/opentok/annotation-widget/releases/tag/1.0.0-js-beta) the latest release.
 
 **PRO TIP**: Pull requests are welcome! If you think you may want to contribute back to this project, please feel free to fork or clone the repo. 
 
 
-Deploying the widget
------
+## Deploying the widget
 
 The web page that loads the Annotations Widget for JavaScript must be served over HTTP/HTTPS. Browser security limitations prevent you from publishing video using a `file://` path, as discussed in the OpenTok.js [Release Notes](https://www.tokbox.com/developer/sdks/js/release-notes.html#knownIssues). 
 
@@ -47,8 +42,7 @@ A web server such as [MAMP](https://www.mamp.info/) or [Apache](https://httpd.ap
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/opentok/annotation-widget/tree/js)
 
-Using the widget
------
+## Using the widget
 
 To use the annotation widget, add the toolbar to your container and create an annotation canvas for both the publisher and subscriber so they can use it. 
 
@@ -131,8 +125,7 @@ toolbar.remove();
 
 
 
-Customizing the toolbar
------
+## Customizing the toolbar
 
 You can customize the annotation toolbar by specifying menu items and their associated actions, as well as your own color palette:
 
@@ -283,8 +276,7 @@ toolbar = new OTSolution.Annotations.Toolbar({
 ```
 
 
-Annotations with screen sharing
-----------------
+## Annotations with screen sharing
 
 For information on setting up your own screen sharing extension, see our sample on [Github](https://github.com/opentok/screensharing-extensions). Once you have
 screen sharing set up, follow one of the recommended steps to install the extension on [Firefox](https://github.com/opentok/screensharing-extensions/tree/master/firefox/ScreenSharing#installing-your-extension) or [Chrome](https://github.com/opentok/screensharing-extensions/tree/master/chrome/ScreenSharing#packaging-and-deploying-your-extension-for-use-at-your-website).

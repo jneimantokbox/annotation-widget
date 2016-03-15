@@ -302,8 +302,7 @@ The following steps are recommended for setting up screen sharing:
 
 ### Open a separate screen sharing window
 
-For best results, we recommend you open a new window for annotations with screen sharing. This allows annotations to be added to extents
-beyond the browser window (on your desktop, for example). The code snippet below is used to create a new window that points to the URL of the
+You must open a new, separate window in order to implement annotations with screen sharing. This is required because the entire browser is displayed when sharing a screen, and an external window is needed to account for the differences in browser sizes and configurations. In addition, the user can only share the browser, though it is still possible to switch between tabs. The code snippet below is used to create a new window that points to the URL of the
 screen sharing sample with annotations ([screenshare.html](web/screenshare.html)), and specifies height and width values for the new window.
 
 ```javascript
@@ -312,8 +311,6 @@ function popupCenter(url, w, h) {
     var top = (screen.height/2)-(h/2);
     var win = window.open(url, '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
 
-    // Share the toolbar with the window to be reused. 
-    // Otherwise you can create a new one in 'screenshare.html'
     win.toolbar = toolbar;
 }
 ```
@@ -359,7 +356,7 @@ The screen sharing container and the toolbar that will be attached to its canvas
 
 ### Create the toolbar
 
-Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](web/index.html), the toolbar is attached to the screen sharing window. In this portion of the logic, `windowRef` is the screen sharing window, whose toolbar is attached to its window using the toolbar’s `addCanvas()` method:
+Annotations are set up for screen sharing in a similar way as with a video publisher (see [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)). In this example, taken from the `createToolbar()` function in [index.html](web/index.html), the toolbar is attached to the screen sharing window. In this portion of the logic, `windowRef` is the screen sharing window. The toolbar is linked to the canvas, which has not yet been created, using the toolbar’s `addCanvas()` method:
 
 ```javascript
 var windowRef = type === 'camera' ? window : screenshareWindow;
@@ -395,6 +392,7 @@ var toolbarRef = windowRef.toolbar;
 toolbarRef.addCanvas(canvas);  
 ```
 
+_**NOTE**: The above example uses fixed-sized containers for video and canvas containers.  However, it is possible for the containers to be dynamically sized, so long as they maintain aspect ratio.  By default, HTML5 canvas elements are cleared when they are resized. If you would like users to be able to resize the canvas, you can set an `onResize` event listener on the window and call `canvas.onResize` in the event handler. Since the  canvas is redrawn on each resize, which is a computationally expensive operation, it is recommended that you throttle calls to `canvas.onResize` in  order to avoid negatively impacting browser performance._
 
 See the [OpenTok.js screen sharing documentation](https://tokbox.com/developer/guides/screen-sharing/js) for more information about screen sharing.
 

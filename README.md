@@ -22,10 +22,8 @@ Once you have learned the basics of deploying an application that uses the OpenT
 To be prepared to develop a web-based application that uses the OpenTok JavaScript Annotations Widget:
 
 1. Review the basic requirements for [OpenTok](https://tokbox.com/developer/requirements/) and [OpenTok.js](https://tokbox.com/developer/sdks/js/#browsers).
-
 2. Your web page must load [OpenTok.js](https://tokbox.com/developer/sdks/js/) first, and then load [opentok-annotations.js](https://github.com/opentok/annotation-widg
 et/tree/js/web/script).  
-
 3. Your app will need a **Session ID**, **Token**, and **API key**, which you can get at the [OpenTok Developer Dashboard](https://dashboard.tokbox.com). 
 
 _**NOTE**: The OpenTok Developer Dashboard allows you to quickly run this sample program. For production deployment, you must generate the **Session ID** and **Token** values using the [OpenTok Server SDK](https://tokbox.com/developer/sdks/server/)._

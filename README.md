@@ -214,58 +214,16 @@ toolbar = new OTSolution.Annotations.Toolbar({
                     title: 'Arrow',
                     icon: 'image/arrow.png'
                 },
-                {
-                    id: 'OT_rect',
-                    title: 'Rectangle',
-                    icon: 'image/rectangle.png'
-                },
+
+                . . .  
+
                 {
                     id: 'OT_oval',
                     title: 'Oval',
                     icon: 'image/oval.png'
-                },
-                {
-                    id: 'custom_star',
-                    title: 'Star',
-                    icon: 'image/star.png',
-                    // points specify the base points that define a shape or object that can be drawn through the annotations
-                    points: [
-                        [0.5 + 0.5 * Math.cos(90 * (Math.PI / 180)), 0.5 + 0.5 * Math.sin(90 * (Math.PI / 180))],
-                        [0.5 + 0.25 * Math.cos(126 * (Math.PI / 180)), 0.5 + 0.25 * Math.sin(126 * (Math.PI / 180))],
-                        [0.5 + 0.5 * Math.cos(162 * (Math.PI / 180)), 0.5 + 0.5 * Math.sin(162 * (Math.PI / 180))],
-                        [0.5 + 0.25 * Math.cos(198 * (Math.PI / 180)), 0.5 + 0.25 * Math.sin(198 * (Math.PI / 180))],
-                        [0.5 + 0.5 * Math.cos(234 * (Math.PI / 180)), 0.5 + 0.5 * Math.sin(234 * (Math.PI / 180))],
-                        [0.5 + 0.25 * Math.cos(270 * (Math.PI / 180)), 0.5 + 0.25 * Math.sin(270 * (Math.PI / 180))],
-                        [0.5 + 0.5 * Math.cos(306 * (Math.PI / 180)), 0.5 + 0.5 * Math.sin(306 * (Math.PI / 180))],
-                        [0.5 + 0.25 * Math.cos(342 * (Math.PI / 180)), 0.5 + 0.25 * Math.sin(342 * (Math.PI / 180))],
-                        [0.5 + 0.5 * Math.cos(18 * (Math.PI / 180)), 0.5 + 0.5 * Math.sin(18 * (Math.PI / 180))],
-                        [0.5 + 0.25 * Math.cos(54 * (Math.PI / 180)), 0.5 + 0.25 * Math.sin(54 * (Math.PI / 180))],
-                        [0.5 + 0.5 * Math.cos(90 * (Math.PI / 180)), 0.5 + 0.5 * Math.sin(90 * (Math.PI / 180))]
-                    ]
                 }
-            ]
-        },
-        {
-            id: 'OT_colors',
-            title: 'Colors',
-            items: { /* Built dynamically */ }
-        },
-        {
-            id: 'OT_line_width',
-            title: 'Line Width',
-            icon: 'image/line_width.png',
-            items: { /* Built dynamically */ }
-        },
-        {
-            id: 'OT_clear',
-            title: 'Clear',
-            icon: 'image/clear.png'
-        },
-        {
-            id: 'OT_capture',
-            title: 'Capture',
-            icon: 'image/camera.png'
-        }
+             ]
+         }
     ]
 });
 ```

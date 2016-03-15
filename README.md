@@ -12,9 +12,9 @@ This guide has the following sections:
 
 Once you have learned the basics of deploying an application that uses the OpenTok JavaScript Annotations Widget, explore these advanced topics:
 
-- [Customizing the toolbar](#customizing-the-toolbar)
-- [Annotations with screen sharing](#annotations-with-screen-sharing)
-- [Cross-platform compatibility notes](#cross-platform-compatibility-notes)
+- [Customize the toolbar](#customize-the-toolbar): Customize the annotation toolbar by creating menu items and your own color palette.
+- [Annotations with screen sharing](#annotations-with-screen-sharing): Add screen sharing capabilities to your application.
+- [Cross-platform compatibility notes](#cross-platform-compatibility-notes): Learn best practices to ensure compatibility of your application across device platforms.
 
 
 ## Prerequisites
@@ -62,7 +62,7 @@ The following steps will help you get started, and you can refer to the [complet
 4. [Attach the Toolbar to a Subscriber](#attach-the-toolbar-to-a-subscriber)
 5. [Clean Up](#clean-up)
 
-Once you have completed these steps, proceed to [Customizing the Toolbar](#customizing-the-toolbar).
+Once you have completed these steps, proceed to [Customize the Toolbar](#customize-the-toolbar).
 
 ### Web page design
 
@@ -151,21 +151,21 @@ toolbar.remove();
 
 
 
-## Customizing the toolbar
+## Customize the toolbar
 
 You can customize the annotation toolbar by specifying menu items and their associated actions, as well as your own color palette:
 
-1. [Customizing Menu Items](#customizing-menu-items)
+1. [Customize Menu Items](#customize-menu-items)
 2. [Adding a Custom Color Palette](#adding-a-custom-color-palette)
 
 See the [quick start](https://github.com/opentok/annotation-widget/blob/js/web/index.html) for a complete code example.
 
-### Customizing Menu Items
+### Customize Menu Items
 
 You can make use of the [default menu items](#default-menu-items) available in the toolbar, or you can add customized menu items and their associated click events:
 
-1. [Adding Menu Items](#adding-menu-items)
-2. [Handling Menu Item Click Events](#handling-menu-item-click-events)
+1. [Add Menu Items](#add-menu-items)
+2. [Handle Menu Item Click Events](#handle-menu-item-click-events)
 
 #### Default Menu Items
 
@@ -186,7 +186,7 @@ If no custom items are added to the toolbar initializer, these will be automatic
 | `OT_capture` | Tap a video frame to capture a screenshot |
 
 
-#### Adding menu items
+#### Add menu items
 
 To add menu items and submenu items, assign them to the `Toolbar` object's `items` property. To create submenu items, add an `items` property to an `item` and continue recursively:
 
@@ -271,7 +271,7 @@ toolbar = new OTSolution.Annotations.Toolbar({
 });
 ```
 
-#### Handling Menu Item Click Events
+#### Handle Menu Item Click Events
 
 To associate a click event handler with a menu item, define an `itemClicked` method for the `Toolbar` object. Specify the menu item ID as the method parameter:
 
@@ -283,7 +283,7 @@ toolbar.itemClicked(function (id) {
 ```
 
 
-### Adding a Custom Color Palette
+### Add a Custom Color Palette
 
 To add a set of custom color choices to your annotation toolbar, initialize the `Toolbar` object's `colors` property with an array of color values:
 

@@ -155,7 +155,7 @@ toolbar.remove();
 You can customize the annotation toolbar by specifying menu items and their associated actions, as well as your own color palette:
 
 1. [Customize Menu Items](#customize-menu-items)
-2. [Adding a Custom Color Palette](#adding-a-custom-color-palette)
+2. [Add a Custom Color Palette](#add-a-custom-color-palette)
 
 See the [quick start](https://github.com/opentok/annotation-widget/blob/js/web/index.html) for a complete code example.
 

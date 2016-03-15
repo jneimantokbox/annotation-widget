@@ -62,7 +62,6 @@ The following steps will help you get started, and you can refer to the [complet
 4. [Attach the Toolbar to a Subscriber](#attach-the-toolbar-to-a-subscriber)
 5. [Clean Up](#clean-up)
 
-Once you have completed these steps, proceed to [Customize the Toolbar](#customize-the-toolbar).
 
 ### Web page design
 
@@ -74,7 +73,7 @@ While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must
 
 * **[screenshare.html](web/screenshare.html)** The screen sharing container, which has its own toolbar and is displayed in a separate browser window.
 
-* **[index.html](web/index.html)**: this quick start provides you with a fully functioning web page so you can immediately begin making calls against OpenTok.js. You can refer to this example to see how to implement the toolbar on your own page. The steps to create this web page are described below in [Using the Widget](#using-the-widget).
+* **[index.html](web/index.html)**: this quick start provides you with a fully functioning web page so you can immediately begin making calls against OpenTok.js. You can refer to this example to see how to implement the toolbar on your own page.
 
 
 

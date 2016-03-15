@@ -33,7 +33,7 @@ _**NOTE**: The OpenTok Developer Dashboard allows you to quickly run this sample
 
 [Download](https://github.com/opentok/annotation-widget/releases/tag/1.0.0-js-beta) the latest release.
 
-**PRO TIP**: Pull requests are welcome! If you think you may want to contribute back to this project, please feel free to fork or clone the repo. 
+**PRO TIP**: Pull requests are welcome! If you think you may want to contribute to this project, please feel free to fork or clone the repo. 
 
 
 ## Deploy

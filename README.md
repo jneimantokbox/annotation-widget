@@ -1,49 +1,44 @@
 # OpenTok Annotations Widget for JavaScript
 
-While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must host the JavaScript Annotations widget yourself. This allows you to modify the widget as desired. 
+This document describes how to develop a web-based application that uses the OpenTok JavaScript Annotations Widget.
 
-* **[opentok-annotations.js](https://github.com/opentok/annotation-widget/tree/js/web/script)**: includes the CSS. If you already have a website making calls against the OpenTok JavaScript client, you can simply download this file and the image files.
+This guide has the following sections:
 
-* **[Image files](https://github.com/opentok/annotation-widget/tree/js/web/image)**: used for the toolbar icons. 
+- [Prerequisites](#prerequisites): A checklist of everything you need to get started.
+- [Download the widget](#download-the-widget): Download and use the OpenTok JavaScript Annotations Widget for use in your own development.
+- [Deploy](#deploying-the-widget): Deploy your own application that hosts the OpenTok JavaScript Annotations Widget.
+- [Explore the code](#explore-the-code): This describes the sample app code design, which uses recommended best practices to create a working implementation that uses the OpenTok JavaScript Annotations Widget.
 
-* **[index.html](https://github.com/opentok/annotation-widget/blob/js/web/index.html)**: this quick start provides you with a fully functioning web page so you can immediately begin making calls against OpenTok.js. You can refer to this example to see how to implement the toolbar on your own page. The steps to create this web page are described below in [Using the Widget](#using-the-widget).
 
-As a beta, this code is subject to change. You can email feedback to collaboration-tools-beta-program@tokbox.com.
+Once you have learned the basics of deploying an application that uses the OpenTok JavaScript Annotations Widget, explore these advanced topics:
 
-This guide has the following sections
-
-- [Requirements](#requirements)
-- [Prerequisites](#prerequisites)
-- [Downloading the widget](#downloading-the-widget)
-- [Deploying the widget](#deploying-the-widget)
-- [Using the widget](#using-the-widget)
 - [Customizing the toolbar](#customizing-the-toolbar)
 - [Annotations with screen sharing](#annotations-with-screen-sharing)
 - [Cross-platform compatibility notes](#cross-platform-compatibility-notes)
 
-## Requirements
-
-Review the basic requirements for [OpenTok](https://tokbox.com/developer/requirements/) and [OpenTok.js](https://tokbox.com/developer/sdks/js/#browsers).
-
 
 ## Prerequisites
 
-* **OpenTok JavaScript client SDK**: your web page must load [OpenTok.js](https://tokbox.com/developer/sdks/js/) first, then [opentok-annotations.js](https://github.com/opentok/annotation-widg
+To be prepared to develop a web-based application that uses the OpenTok JavaScript Annotations Widget:
+
+1. Review the basic requirements for [OpenTok](https://tokbox.com/developer/requirements/) and [OpenTok.js](https://tokbox.com/developer/sdks/js/#browsers).
+
+2. Your web page must load [OpenTok.js](https://tokbox.com/developer/sdks/js/) first, and then load [opentok-annotations.js](https://github.com/opentok/annotation-widg
 et/tree/js/web/script).  
 
-* **An API key**: obtained when you sign up for a [developer account](https://dashboard.tokbox.com/users/sign_up).
+3. Your app will need a **Session ID**, **Token**, and **API key**, which you can get at the [OpenTok Developer Dashboard](https://dashboard.tokbox.com). 
 
-* **Session ID and token**: during testing and development phases, you can generate these manually inside the [Dashboard](https://dashboard.tokbox.com/). Before going live, you will need to deploy a [server SDK](https://tokbox.com/developer/sdks/server/) and generate these values dynamically.
+_**NOTE**: The OpenTok Developer Dashboard allows you to quickly run this sample program. For production deployment, you must generate the **Session ID** and **Token** values using the [OpenTok Server SDK](https://tokbox.com/developer/sdks/server/)._
 
 
-## Downloading the widget
+## Download the widget
 
 [Download](https://github.com/opentok/annotation-widget/releases/tag/1.0.0-js-beta) the latest release.
 
 **PRO TIP**: Pull requests are welcome! If you think you may want to contribute back to this project, please feel free to fork or clone the repo. 
 
 
-## Deploying the widget
+## Deploy
 
 The web page that loads the Annotations Widget for JavaScript must be served over HTTP/HTTPS. Browser security limitations prevent you from publishing video using a `file://` path, as discussed in the OpenTok.js [Release Notes](https://www.tokbox.com/developer/sdks/js/release-notes.html#knownIssues). 
 
@@ -53,20 +48,38 @@ A web server such as [MAMP](https://www.mamp.info/) or [Apache](https://httpd.ap
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/opentok/annotation-widget/tree/js)
 
-## Using the widget
+## Explore the code
 
-To use the annotation widget, add the toolbar to your container and create an annotation canvas for both the publisher and subscriber so they can use it. 
+This section describes how the sample app code design uses recommended best practices to create a working implementation that uses the annotation widget. 
+
+To develop your own application with the annotation widget, follow this section to learn how to add the toolbar to your container and create an annotation canvas for both the publisher and subscriber. 
 
 The following steps will help you get started, and you can refer to the [complete code example](https://github.com/opentok/annotation-widget/blob/js/web/index.html):
 
-1. [Linking and Adding the Toolbar](#linking-and-adding-the-toolbar)
-2. [Attaching the Toolbar to a Publisher](#attaching-the-toolbar-to-a-publisher)
-3. [Attaching the Toolbar to a Subscriber](#attaching-the-toolbar-to-a-subscriber)
-4. [Cleaning Up](#cleaning-up)
+1. [Web page design](#web-page-design)
+2. [Link and Add the Toolbar](#link-and-add-the-toolbar)
+3. [Attach the Toolbar to a Publisher](#attach-the-toolbar-to-a-publisher)
+4. [Attach the Toolbar to a Subscriber](#attach-the-toolbar-to-a-subscriber)
+5. [Clean Up](#clean-up)
 
 Once you have completed these steps, proceed to [Customizing the Toolbar](#customizing-the-toolbar).
 
-### Linking and Adding the Toolbar
+### Web page design
+
+While TokBox hosts [OpenTok.js](https://tokbox.com/developer/sdks/js/), you must host the JavaScript Annotations widget yourself. This allows you to modify the widget as desired. The sample app has the following design
+
+* **[opentok-annotations.js](web/script/opentok-annotations.js)**: This is the OpenTok Annotation Plugin, and includes the CSS. If you already have a website making calls against the OpenTok JavaScript client, you can simply download this file and the image files.
+
+* **[Image files](https://github.com/opentok/annotation-widget/tree/js/web/image)**: Images used for the toolbar icons. 
+
+* **[screenshare.html](web/screenshare.html)** The screen sharing container, which has its own toolbar and is displayed in a separate browser window.
+
+* **[index.html](web/index.html)**: this quick start provides you with a fully functioning web page so you can immediately begin making calls against OpenTok.js. You can refer to this example to see how to implement the toolbar on your own page. The steps to create this web page are described below in [Using the Widget](#using-the-widget).
+
+
+
+### Link and Add the Toolbar
+
 As you create the annotation toolbar instance, link the active OpenTok session to it and add the toolbar to the parent container: 
 
 1. Assign the OpenTok session variable to the `Toolbar` object's `session` property.
@@ -82,7 +95,9 @@ toolbar = new OTSolution.Annotations.Toolbar({
 
 For more information, see [Initialize, Connect, and Publish to a Session](https://tokbox.com/developer/concepts/connect-and-publish/).
 
-### Attaching the Toolbar to a Publisher
+
+### Attach the Toolbar to a Publisher
+
 To use the annotation toolbar, you will need a *canvas* on which the publisher can place annotations.
 
 Once you create the publisher instance, create an annotation canvas for the publisher and add it to the toolbar:
@@ -103,7 +118,7 @@ toolbar.addCanvas(canvas);
 For more information, see [Publishing Streams](https://www.tokbox.com/developer/guides/publish-stream/js/).
 
 
-### Attaching the Toolbar to a Subscriber
+### Attach the Toolbar to a Subscriber
 As you create new streams, attach the annotation canvases for each subscriber and add those to the toolbar.
 
 ```javascript
@@ -120,7 +135,7 @@ toolbar.addCanvas(canvas);
 
 For more information, see [Subscribing to streams](https://www.tokbox.com/developer/guides/subscribe-stream/js/).
 
-### Cleaning Up
+### Clean Up
 
 To remove a single annotation canvas, call the `Toolbar` object's `removeCanvas` method and provide the connection ID for the stream:
 
